@@ -24,9 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-d(y7#2pk-6*t-gr6hx0z&oc(l-q@78c+114)ub&6^iblp!_hse'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['https://learnfree-2.onrender.com']
+ALLOWED_HOSTS = ['learnfree-2.onrender.com', '127.0.0.1', 'localhost']
+
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
 
 # Application definition
@@ -118,7 +125,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
