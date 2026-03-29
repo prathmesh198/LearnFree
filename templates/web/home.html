@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LearnFree</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Playfair+Display:wght@600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <style>body { box-sizing: border-box; }</style>
+ </head>
+ <body class="h-full font-body overflow-auto" style="background-color: #0f1117; color: #e8e6e1;">
+  <!-- Navbar -->
+  <nav id="navbar" style="background: rgba(15,17,23,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(232,230,225,0.08);" class="fixed top-0 left-0 w-full z-50">
+   <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2">
+     <div style="background-color: #c9f56e;" class="w-8 h-8 rounded-lg flex items-center justify-center">
+      <i data-lucide="graduation-cap" style="color: #0f1117; width: 18px; height: 18px;"></i>
+     </div><span id="nav-title" class="font-heading text-xl font-bold" style="color: #e8e6e1;">LearnFree</span> </a>
+    <div class="hidden md:flex items-center gap-8">
+     <a href="#courses" class="nav-link text-sm" style="color: #a09d96;">Courses</a> <a href="#categories" class="nav-link text-sm" style="color: #a09d96;">Categories</a> <a href="#stats" class="nav-link text-sm" style="color: #a09d96;">Community</a> <a href="#footer" class="nav-link text-sm" style="color: #a09d96;">Contact</a>
+    </div>
+    <div class="flex items-center gap-3">
+     <button class="hidden sm:flex items-center gap-2 px-4 py-2 rounded-lg text-sm" style="border: 1px solid rgba(232,230,225,0.15); color: #e8e6e1;"> <i data-lucide="search" style="width: 15px; height: 15px;"></i> Search </button> <button class="px-5 py-2 rounded-lg text-sm font-semibold" style="background-color: #c9f56e; color: #0f1117;">Get Started</button> <button id="mobile-menu-btn" class="md:hidden p-2" onclick="toggleMobileMenu()"> <i data-lucide="menu" style="width: 22px; height: 22px; color: #e8e6e1;"></i> </button>
+    </div>
+   </div><!-- Mobile Menu -->
+   <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col gap-3">
+    <a href="#courses" class="text-sm py-2" style="color: #a09d96; border-bottom: 1px solid rgba(232,230,225,0.08);">Courses</a> <a href="#categories" class="text-sm py-2" style="color: #a09d96; border-bottom: 1px solid rgba(232,230,225,0.08);">Categories</a> <a href="#stats" class="text-sm py-2" style="color: #a09d96; border-bottom: 1px solid rgba(232,230,225,0.08);">Community</a> <a href="#footer" class="text-sm py-2" style="color: #a09d96;">Contact</a>
+   </div>
+  </nav>
+  <main class="w-full">
+   <!-- Hero -->
+   <section class="pt-32 pb-20 px-6 relative overflow-hidden">
+    <div style="position:absolute;top:-80px;right:-120px;width:400px;height:400px;background:radial-gradient(circle,rgba(201,245,110,0.12) 0%,transparent 70%);pointer-events:none;"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+     <div class="fade-up inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-medium mb-6" style="background: rgba(201,245,110,0.1); color: #c9f56e; border: 1px solid rgba(201,245,110,0.2);">
+      <i data-lucide="sparkles" style="width: 13px; height: 13px;"></i> 100% Free · No Credit Card
+     </div>
+     <h1 id="hero-heading" class="fade-up fade-up-d1 font-heading text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-5" style="color: #e8e6e1;">Master New Skills<br><span style="color: #c9f56e;">for Free</span></h1>
+     <p id="hero-subtext" class="fade-up fade-up-d2 text-base sm:text-lg max-w-2xl mx-auto mb-8" style="color: #a09d96;">Explore hundreds of professional courses taught by industry experts. Build your career, learn at your own pace, completely free.</p>
+     <div class="fade-up fade-up-d3 flex flex-col sm:flex-row gap-3 justify-center">
+      <button class="px-7 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2" style="background-color: #c9f56e; color: #0f1117;"> <i data-lucide="play-circle" style="width: 18px; height: 18px;"></i> Browse Courses </button> <button class="px-7 py-3 rounded-xl font-semibold text-sm flex items-center justify-center gap-2" style="border: 1px solid rgba(232,230,225,0.15); color: #e8e6e1;"> <i data-lucide="compass" style="width: 18px; height: 18px;"></i> Explore Paths </button>
+     </div>
+    </div>
+   </section><!-- Stats -->
+   <section id="stats" class="pb-16 px-6">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+     <div class="fade-up fade-up-d2 text-center p-5 rounded-2xl" style="background: rgba(232,230,225,0.04); border: 1px solid rgba(232,230,225,0.07);">
+      <p class="font-heading text-2xl font-bold" style="color: #c9f56e;">500+</p>
+      <p class="text-xs mt-1" style="color: #a09d96;">Free Courses</p>
+     </div>
+     <div class="fade-up fade-up-d3 text-center p-5 rounded-2xl" style="background: rgba(232,230,225,0.04); border: 1px solid rgba(232,230,225,0.07);">
+      <p class="font-heading text-2xl font-bold" style="color: #c9f56e;">120K+</p>
+      <p class="text-xs mt-1" style="color: #a09d96;">Students</p>
+     </div>
+     <div class="fade-up fade-up-d4 text-center p-5 rounded-2xl" style="background: rgba(232,230,225,0.04); border: 1px solid rgba(232,230,225,0.07);">
+      <p class="font-heading text-2xl font-bold" style="color: #c9f56e;">95%</p>
+      <p class="text-xs mt-1" style="color: #a09d96;">Satisfaction</p>
+     </div>
+     <div class="fade-up fade-up-d5 text-center p-5 rounded-2xl" style="background: rgba(232,230,225,0.04); border: 1px solid rgba(232,230,225,0.07);">
+      <p class="font-heading text-2xl font-bold" style="color: #c9f56e;">50+</p>
+      <p class="text-xs mt-1" style="color: #a09d96;">Expert Mentors</p>
+     </div>
+    </div>
+   </section><!-- Categories -->
+   <section id="categories" class="pb-16 px-6">
+    <div class="max-w-6xl mx-auto">
+     <h2 class="font-heading text-2xl sm:text-3xl font-bold mb-6 text-center" style="color: #e8e6e1;">Browse by Category</h2>
+     <div class="flex flex-wrap justify-center gap-3 mb-4" id="category-filters">
+      <button onclick="filterCourses('all')" class="category-pill active px-5 py-2 rounded-full text-sm" style="background-color: #c9f56e; color: #0f1117;" data-cat="all">All</button> <button onclick="filterCourses('dev')" class="category-pill px-5 py-2 rounded-full text-sm" style="background: rgba(232,230,225,0.07); color: #a09d96;" data-cat="dev">Development</button> <button onclick="filterCourses('design')" class="category-pill px-5 py-2 rounded-full text-sm" style="background: rgba(232,230,225,0.07); color: #a09d96;" data-cat="design">Design</button> <button onclick="filterCourses('business')" class="category-pill px-5 py-2 rounded-full text-sm" style="background: rgba(232,230,225,0.07); color: #a09d96;" data-cat="business">Business</button> <button onclick="filterCourses('data')" class="category-pill px-5 py-2 rounded-full text-sm" style="background: rgba(232,230,225,0.07); color: #a09d96;" data-cat="data">Data Science</button> <button onclick="filterCourses('marketing')" class="category-pill px-5 py-2 rounded-full text-sm" style="background: rgba(232,230,225,0.07); color: #a09d96;" data-cat="marketing">Marketing</button>
+     </div>
+    </div>
+   <section id="courses" class="px-6 pb-20">
+  <h2 class="text-3xl font-bold text-center mb-10">
+    Featured Courses
+  </h2>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    {% for course in courses %}
+    <div class="bg-[#1a1c24] rounded-2xl overflow-hidden border border-gray-700 hover:scale-105 transition duration-300">
+
+      <!-- IMAGE -->
+      {% if course.photo %}
+      <img src="{{ course.photo.url }}" class="w-full h-48 object-cover">
+      {% else %}
+      <div class="w-full h-48 flex items-center justify-center bg-gray-800 text-gray-400">
+        No Image
+      </div>
+      {% endif %}
+
+      <!-- CONTENT -->
+      <div class="p-5">
+
+        <h3 class="text-lg font-bold mb-2 text-white">
+          {{ course.title }}
+        </h3>
+
+        <p class="text-sm text-gray-400 mb-4">
+          {{ course.description|truncatewords:15 }}
+        </p>
+
+        <!-- ACTION -->
+        <div class="flex justify-between items-center">
+
+          {% if course.pdf %}
+          <a href="{{ course.pdf.url }}" 
+             class="text-xs text-[#c9f56e] hover:underline">
+            Download PDF
+          </a>
+          {% else %}
+          <span class="text-xs text-gray-500">
+            No PDF
+          </span>
+          {% endif %}
+
+          <span class="text-xs bg-[#c9f56e]/20 text-[#c9f56e] px-3 py-1 rounded-full">
+            FREE
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+    {% empty %}
+      <p class="text-center col-span-3 text-gray-400">
+        No courses available
+      </p>
+    {% endfor %}
+
+  </div>
+</section>
+   <section class="pb-20 px-6">
+    <div class="max-w-4xl mx-auto text-center p-10 sm:p-14 rounded-3xl relative overflow-hidden" style="background: linear-gradient(135deg, rgba(201,245,110,0.1) 0%, rgba(201,245,110,0.03) 100%); border: 1px solid rgba(201,245,110,0.15);">
+     <h2 class="font-heading text-2xl sm:text-3xl font-bold mb-3" style="color: #e8e6e1;">Start Learning Today</h2>
+     <p class="text-sm mb-7 max-w-lg mx-auto" style="color: #a09d96;">Join thousands of learners transforming their careers. Every course is completely free, forever.</p><button class="px-8 py-3 rounded-xl font-semibold text-sm" style="background-color: #c9f56e; color: #0f1117;">Create Free Account</button>
+    </div>
+   </section>
+  </main><!-- Footer -->
+  <footer id="footer" class="w-full px-6 py-12" style="background: rgba(232,230,225,0.03); border-top: 1px solid rgba(232,230,225,0.07);">
+   <div class="max-w-6xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10">
+     <div>
+      <div class="flex items-center gap-2 mb-4">
+       <div style="background-color: #c9f56e;" class="w-7 h-7 rounded-lg flex items-center justify-center">
+        <i data-lucide="graduation-cap" style="color: #0f1117; width: 15px; height: 15px;"></i>
+       </div><span id="footer-brand" class="font-heading text-lg font-bold" style="color: #e8e6e1;">LearnFree</span>
+      </div>
+      <p class="text-xs leading-relaxed" style="color: #a09d96;">Empowering learners worldwide with free, high-quality professional education.</p>
+     </div>
+     <div>
+      <h4 class="font-semibold text-sm mb-4" style="color: #e8e6e1;">Platform</h4>
+      <ul class="flex flex-col gap-2.5">
+       <li><a href="#courses" class="text-xs hover:underline" style="color: #a09d96;">All Courses</a></li>
+       <li><a href="#" class="text-xs hover:underline" style="color: #a09d96;">Learning Paths</a></li>
+       <li><a href="#" class="text-xs hover:underline" style="color: #a09d96;">Certificates</a></li>
+       <li><a href="#" class="text-xs hover:underline" style="color: #a09d96;">Mentorship</a></li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="font-semibold text-sm mb-4" style="color: #e8e6e1;">Company</h4>
+      <ul class="flex flex-col gap-2.5">
+       <li><a href="#" class="text-xs hover:underline" style="color: #a09d96;">About Us</a></li>
+       <li><a href="#" class="text-xs hover:underline" style="color: #a09d96;">Careers</a></li>
+       <li><a href="#" class="text-xs hover:underline" style="color: #a09d96;">Blog</a></li>
+       <li><a href="#" class="text-xs hover:underline" style="color: #a09d96;">Press</a></li>
+      </ul>
+     </div>
+     <div>
+      <h4 class="font-semibold text-sm mb-4" style="color: #e8e6e1;">Connect</h4>
+      <div class="flex gap-3">
+       <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: rgba(232,230,225,0.07);"> <i data-lucide="twitter" style="width: 15px; height: 15px; color: #a09d96;"></i> </a> <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: rgba(232,230,225,0.07);"> <i data-lucide="linkedin" style="width: 15px; height: 15px; color: #a09d96;"></i> </a> <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: rgba(232,230,225,0.07);"> <i data-lucide="github" style="width: 15px; height: 15px; color: #a09d96;"></i> </a> <a href="#" class="w-9 h-9 rounded-lg flex items-center justify-center" style="background: rgba(232,230,225,0.07);"> <i data-lucide="youtube" style="width: 15px; height: 15px; color: #a09d96;"></i> </a>
+      </div>
+     </div>
+    </div>
+    <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3" style="border-top: 1px solid rgba(232,230,225,0.07);">
+     <p id="footer-copy" class="text-xs" style="color: #a09d96;">© 2025 LearnFree. All rights reserved.</p>
+     <div class="flex gap-5">
+      <a href="#" class="text-xs hover:underline" style="color: #a09d96;">Privacy</a> <a href="#" class="text-xs hover:underline" style="color: #a09d96;">Terms</a> <a href="#" class="text-xs hover:underline" style="color: #a09d96;">Cookies</a>
+     </div>
+    </div>
+   </div>
+  </footer>
+  <script>
+    
+    const levelColors = { Beginner: "#c9f56e", Intermediate: "#f5c96e", Advanced: "#f56e8e" };
+
+    function renderCourses(filter = 'all') {
+      const grid = document.getElementById('courses-grid');
+      const filtered = filter === 'all' ? courses : courses.filter(c => c.cat === filter);
+      grid.innerHTML = filtered.map((c, i) => `
+        <div class="course-card rounded-2xl overflow-hidden fade-up" style="background: rgba(232,230,225,0.04); border: 1px solid rgba(232,230,225,0.07); animation-delay: ${i * 0.08}s;">
+          <div class="p-5 pb-3 flex items-start justify-between">
+            <div class="w-11 h-11 rounded-xl flex items-center justify-center" style="background: rgba(201,245,110,0.1);">
+              <i data-lucide="${c.icon}" style="width: 20px; height: 20px; color: #c9f56e;"></i>
+            </div>
+            <span class="text-xs px-3 py-1 rounded-full font-medium" style="background: ${levelColors[c.level]}22; color: ${levelColors[c.level]};">${c.level}</span>
+          </div>
+          <div class="px-5 pb-2">
+            <h3 class="font-heading text-base font-bold mb-1.5" style="color: #e8e6e1;">${c.title}</h3>
+            <div class="flex items-center gap-3 text-xs" style="color: #a09d96;">
+              <span class="flex items-center gap-1"><i data-lucide="book-open" style="width: 12px; height: 12px;"></i> ${c.lessons} lessons</span>
+              <span class="flex items-center gap-1"><i data-lucide="clock" style="width: 12px; height: 12px;"></i> ${c.hours}h</span>
+            </div>
+          </div>
+          <div class="px-5 py-3.5 mt-2 flex items-center justify-between" style="border-top: 1px solid rgba(232,230,225,0.06);">
+            <div class="flex items-center gap-2">
+              <span class="flex items-center gap-1 text-xs font-medium" style="color: #c9f56e;"><i data-lucide="star" style="width: 12px; height: 12px;"></i> ${c.rating}</span>
+              <span class="text-xs" style="color: #a09d96;">(${c.students})</span>
+            </div>
+            <span class="text-xs font-bold px-3 py-1 rounded-full" style="background: rgba(201,245,110,0.1); color: #c9f56e;">FREE</span>
+          </div>
+        </div>
+      `).join('');
+      lucide.createIcons();
+    }
+
+    function filterCourses(cat) {
+      document.querySelectorAll('.category-pill').forEach(btn => {
+        const isActive = btn.dataset.cat === cat;
+        btn.style.backgroundColor = isActive ? '#c9f56e' : 'rgba(232,230,225,0.07)';
+        btn.style.color = isActive ? '#0f1117' : '#a09d96';
+        btn.classList.toggle('active', isActive);
+      });
+      renderCourses(cat);
+    }
+
+    function toggleMobileMenu() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    }
+
+    // Default config
+    const defaultConfig = {
+      site_title: "LearnFree",
+      hero_heading: "Master New Skills for Free",
+      hero_subtext: "Explore hundreds of professional courses taught by industry experts. Build your career, learn at your own pace, completely free.",
+      footer_text: "© 2025 LearnFree. All rights reserved.",
+      background_color: "#0f1117",
+      surface_color: "#1a1c24",
+      text_color: "#e8e6e1",
+      accent_color: "#c9f56e",
+      muted_color: "#a09d96",
+      font_family: "DM Sans",
+      font_size: 14
+    };
+
+    async function onConfigChange(config) {
+      const c = { ...defaultConfig, ...config };
+      const font = c.font_family || defaultConfig.font_family;
+      const baseFontStack = `${font}, system-ui, sans-serif`;
+      const baseSize = c.font_size || defaultConfig.font_size;
+
+      document.getElementById('nav-title').textContent = c.site_title;
+      document.getElementById('footer-brand').textContent = c.site_title;
+
+      const heroH = document.getElementById('hero-heading');
+      heroH.innerHTML = c.hero_heading.replace(/(for Free|Free)/i, '<span style="color:' + c.accent_color + '">$1</span>');
+
+      document.getElementById('hero-subtext').textContent = c.hero_subtext;
+      document.getElementById('footer-copy').textContent = c.footer_text;
+
+      // Colors
+      document.body.style.backgroundColor = c.background_color;
+      document.body.style.color = c.text_color;
+
+      // Font
+      document.body.style.fontFamily = baseFontStack;
+      document.querySelectorAll('.font-heading').forEach(el => {
+        el.style.fontFamily = `Playfair Display, ${font}, Georgia, serif`;
+      });
+
+      document.getElementById('hero-subtext').style.fontSize = `${baseSize * 1.14}px`;
+      document.getElementById('footer-copy').style.fontSize = `${baseSize * 0.85}px`;
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => {
+          const c = { ...defaultConfig, ...config };
+          return {
+            recolorables: [
+              { get: () => c.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+              { get: () => c.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+              { get: () => c.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+              { get: () => c.accent_color, set: (v) => { config.accent_color = v; window.elementSdk.setConfig({ accent_color: v }); } },
+              { get: () => c.muted_color, set: (v) => { config.muted_color = v; window.elementSdk.setConfig({ muted_color: v }); } },
+            ],
+            borderables: [],
+            fontEditable: {
+              get: () => c.font_family || defaultConfig.font_family,
+              set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); }
+            },
+            fontSizeable: {
+              get: () => c.font_size || defaultConfig.font_size,
+              set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); }
+            }
+          };
+        },
+        mapToEditPanelValues: (config) => {
+          const c = { ...defaultConfig, ...config };
+          return new Map([
+            ["site_title", c.site_title],
+            ["hero_heading", c.hero_heading],
+            ["hero_subtext", c.hero_subtext],
+            ["footer_text", c.footer_text]
+          ]);
+        }
+      });
+    }
+
+    renderCourses();
+    lucide.createIcons();
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9e1f9757f24e1432',t:'MTc3NDQ1OTI3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

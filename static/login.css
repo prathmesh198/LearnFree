@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    background: #0f172a;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    background: #111827;
+    color: white;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #1e293b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    width: 250px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: none;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.login-btn {
+    background: #3b82f6;
+    border: none;
+    padding: 8px 15px;
+    color: white;
+    border-radius: 5px;
+}
+
+.container {
+    display: flex;
+    height: 90vh;
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left img {
+    width: 70%;
+    border-radius: 50%;
+}
+
+.right {
+    width: 50%;
+    background: linear-gradient(to right, #1e3a8a, #0ea5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    width: 350px;
+    border-radius: 10px;
+}
+
+.card h2 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    border-bottom: 2px solid #3b82f6;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+}
+
+.card input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid gray;
+    outline: none;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #2563eb;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.signup span {
+    color: #2563eb;
+    cursor: pointer;
+}
+
+.back {
+    margin-top: 10px;
+    color: #2563eb;
+    cursor: pointer;
+}

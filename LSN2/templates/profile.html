@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#0f0f0f]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="h-full text-white">
+
+
+<header class="w-full bg-[#0f0f0f] px-8 py-4 flex items-center justify-between shadow-md">
+  <h1 class="text-xl font-bold">
+    <a href="/" class="text-white">LearnFree</a>
+  </h1>
+
+
+  <div class="flex items-center gap-4">
+    <span class="text-gray-300">
+      Hi, {{ user.first_name|default:user.username }}
+    </span>
+
+
+ 
+  </div>
+</header>
+
+<!-- Main Container -->
+<div class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+  <!-- LEFT: Profile Card -->
+  <div class="bg-[#1a1a1a] rounded-2xl p-6 shadow-xl">
+    <h2 class="text-xl font-bold text-[#c9f56e] mb-4">Profile</h2>
+
+    <div class="space-y-4">
+      <div>
+        <p class="text-gray-400 text-sm">Username</p>
+        <p class="bg-[#0f0f0f] p-2 rounded-lg">{{ user.username }}</p>
+      </div>
+
+      <div>
+        <p class="text-gray-400 text-sm">Email</p>
+        <p class="bg-[#0f0f0f] p-2 rounded-lg">{{ user.email }}</p>
+      </div>
+
+      <div>
+        <p class="text-gray-400 text-sm">Full Name</p>
+        <p class="bg-[#0f0f0f] p-2 rounded-lg">
+          {{ user.fullname }}
+        </p>
+      </div>
+       <div>
+             <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+        <button type="submit">Logout</button>
+        </form>
+      </div>
+     
+    </div>
+  </div>
+ 
+
+  <div class="md:col-span-2 space-y-6">
+
+    <!-- Stats -->
+    <div class="grid grid-cols-3 gap-4">
+      <div class="bg-[#1a1a1a] p-4 rounded-xl text-center">
+        <p class="text-gray-400 text-sm">Courses</p>
+        <p class="text-2xl font-bold text-[#c9f56e]">
+          {{ courses|length }}
+        </p>
+      </div>
+
+      <div class="bg-[#1a1a1a] p-4 rounded-xl text-center">
+        <p class="text-gray-400 text-sm">Completed</p>
+        <p class="text-2xl font-bold text-[#c9f56e]">
+          {{ completed_courses }}
+        </p>
+      </div>
+
+      <div class="bg-[#1a1a1a] p-4 rounded-xl text-center">
+        <p class="text-gray-400 text-sm">Certificates</p>
+        <p class="text-2xl font-bold text-[#c9f56e]">
+          {{ certificates|length }}
+        </p>
+      </div>
+    </div>
+
+    <!-- Courses -->
+    <div class="bg-[#1a1a1a] p-6 rounded-2xl shadow-xl">
+      <h2 class="text-lg font-bold text-[#c9f56e] mb-4">My Courses</h2>
+
+      {% if courses %}
+        <div class="space-y-3">
+          {% for course in courses %}
+            <div class="flex justify-between items-center bg-[#0f0f0f] p-3 rounded-lg">
+              <span>{{ course.name }}</span>
+             
+              <span class="text-sm text-gray-400">New</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-gray-400">No courses enrolled</p>
+      {% endif %}
+    </div>
+
+    <!-- Certificates -->
+    <div class="bg-[#1a1a1a] p-6 rounded-2xl shadow-xl">
+      <h2 class="text-lg font-bold text-[#c9f56e] mb-4">Certificates</h2>
+
+      {% if certificates %}
+        <div class="space-y-3">
+          {% for cert in certificates %}
+            <div class="flex justify-between items-center bg-[#0f0f0f] p-3 rounded-lg">
+              <span>{{ cert.title }}</span>
+              <a href="{{ cert.file.url }}" class="text-[#c9f56e] text-sm">View</a>
+            </div>
+          {% endfor %}
+        </div>
+      {% else %}
+        <p class="text-gray-400">No certificates yet</p>
+      {% endif %}
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

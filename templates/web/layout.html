@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Website</title>
+ 
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo">L</div>
+  <input type="text" placeholder="Search..." class="search">
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">About Us</a>
+    <a href="#">Contact</a>
+  </nav>
+  <button class="login-btn">Login</button>
+</header>
+
+<section class="hero">
+  <div class="hero-text">
+    <p class="small-text">learn something new</p>
+    <h1>Master a new skill to advance your career today.</h1>
+    <p class="desc">
+      Explore hundreds of courses from industry experts.<br>
+      Start your journey, anytime and anywhere.
+    </p>
+    <button href="" class="start-btn">Start Now</button>
+    <p class="note">In free<br>you also add some courses</p>
+  </div>
+  <div class="hero-shape"></div>
+</section>
+
+<section class="section">
+  <h2>Featured Courses (Slider)</h2>
+  <div class="slider" id="slider">
+    <div class="card">Intro to Data Science</div>
+    <div class="card">Google UX Design</div>
+    <div class="card">Python for Everybody</div>
+    <div class="card">Well Being</div>
+    <div class="card">Project Management</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>All Courses (Written Format)</h2>
+  <div class="list">
+    <div class="list-item">
+      <h3>Introduction to Data Science</h3>
+      <p>University of Michigan | Rating: 4.8 | Students: 85K</p>
+    </div>
+    <div class="list-item">
+      <h3>Google UX Design Professional Certificate</h3>
+      <p>Google | Rating: 4.9 | Students: 120K</p>
+    </div>
+  </div>
+</section>
+
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

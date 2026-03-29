@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">L</div>
+    <input type="text" placeholder="Search..." class="search">
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </nav>
+    <button class="login-btn">Login</button>
+</header>
+
+<div class="container">
+
+    <div class="left">
+        <img src="https://via.placeholder.com/500" alt="">
+    </div>
+
+    <div class="right">
+        <div class="card">
+            <h2>Login</h2>
+            <p>Welcome! Please login to continue.</p>
+
+            <h3>Login</h3>
+
+            <input type="text" placeholder="Username">
+            <input type="password" placeholder="Password">
+
+            <button class="submit-btn">Login</button>
+
+            <p class="signup">Don't have an account? <span>Sign Up</span></p>
+            <p class="back">← Back to Home</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

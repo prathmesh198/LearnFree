@@ -1,0 +1,112 @@
+/* ================= COURSE SECTION ================= */
+
+/* SLIDER */
+.slider {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+/* CARD */
+.course-card {
+  min-width: 260px;
+  background: #1a1c24;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06);
+  position: relative;
+}
+
+/* HOVER EFFECT */
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+/* IMAGE */
+.course-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+/* IMAGE ZOOM */
+.course-card:hover img {
+  transform: scale(1.08);
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #c9f56e;
+  color: black;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+}
+
+/* CONTENT */
+.course-content {
+  padding: 15px;
+}
+
+/* TITLE */
+.course-content h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+/* DESCRIPTION */
+.course-content p {
+  font-size: 13px;
+  color: #a09d96;
+  line-height: 1.4;
+}
+
+/* FOOTER ROW */
+.course-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+/* RATING */
+.rating {
+  color: #c9f56e;
+  font-size: 13px;
+}
+
+/* BUTTONS */
+.card-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-download {
+  padding: 6px 10px;
+  background: #c9f56e;
+  color: black;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.3s;
+}
+
+.btn-download:hover {
+  transform: scale(1.08);
+}
+
+.btn-download.alt {
+  background: #3b82f6;
+  color: white;
+}

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ course.name }}</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body { background: #0f1117; color: #e8e6e1; }
+  </style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="flex justify-between items-center px-6 py-4 border-b"
+     style="border-color: rgba(232,230,225,0.08);">
+
+  <div class="flex items-center gap-3">
+    <a href="/" class="text-xl">←</a>
+    <h1 class="text-lg font-semibold">{{ course.name }}</h1>
+  </div>
+
+  
+</div>
+
+<div class="flex h-[90vh]">
+
+  <!-- LEFT CONTENT -->
+  <div id="contentArea" class="flex-1 flex items-center justify-center">
+
+    <h2 class="text-gray-400">Select a module</h2>
+
+  </div>
+
+  <!-- RIGHT SIDEBAR -->
+  <div class="w-80 p-4 border-l bg-[#1a1c24]">
+
+    <div class="mb-4">
+      <img src="{{ course.photo.url }}" class="w-14 h-14 rounded">
+      <h2>{{ course.name }}</h2>
+    </div>
+
+    <!-- MODULES -->
+     <div onclick="loadPDF('{{ course.pdf.url }}')"
+         class="p-3 cursor-pointer hover:bg-[#2a2d36] rounded">
+      📘 {{ course.name }}
+    </div>
+
+  </div>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+
+function loadPDF(url) {
+  document.getElementById("contentArea").innerHTML = `
+    <div class="w-full h-full flex flex-col">
+
+      <iframe src="${url}" class="w-full h-full"></iframe>
+
+      <div class="p-4 text-center">
+        <button onclick="loadFeedback()"
+          class="bg-yellow-400 text-black px-6 py-2 rounded">
+          Finish Course
+        </button>
+      </div>
+
+    </div>
+  `;
+}
+
+function loadFeedback() {
+  document.getElementById("contentArea").innerHTML = `
+    <div class="bg-[#1a1c24] p-6 rounded-xl w-96 mx-auto">
+      <h2 class="text-xl mb-4">Feedback</h2>
+
+      <textarea class="w-full p-2 bg-black border rounded mb-3"></textarea>
+
+      <button onclick="showCertificate()"
+        class="bg-yellow-400 w-full py-2 rounded">
+        Submit
+      </button>
+    </div>
+  `;
+}
+
+function showCertificate() {
+  document.getElementById("contentArea").innerHTML = `
+    <div class="text-center">
+      <h2 class="text-2xl mb-4">🎓 Certificate Ready</h2>
+
+      <a href="{% url 'certificate' course.id %}"
+         class="bg-yellow-500 text-black px-6 py-2 rounded">
+         Download Certificate
+      </a>
+    </div>
+  `;
+}
+
+</script>
+
+</body>
+</html>
