@@ -14,8 +14,11 @@ import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+# settings.py
+
+SECRET_KEY = 'e70))!du_cne)cqy6#&xd9xiz^80gygu*523k-%t9z^)da-9ov'
 BASE_DIR = Path(__file__).resolve().parent.parent
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'dev-key-for-local-only')
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'LSN2',
+     'sslserver',
  
 ]
 
